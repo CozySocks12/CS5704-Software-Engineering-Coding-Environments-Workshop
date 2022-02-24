@@ -1,6 +1,8 @@
 #Written By SakethV
 #This function converts any integer upto 4000 into a roman numeral by array traversion. The IDE used for this is PyCharm with the programing language being Python 3. 
 
+def int_to_roman(num):
+
 m = ["", "M", "MM", "MMM"]  # list all the possible values for M
     c = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]  # list all the possible values for C
     x = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]  # list all the possible values for x
@@ -20,3 +22,32 @@ m = ["", "M", "MM", "MMM"]  # list all the possible values for M
     result = (thousands + hundreds +
               tens + ones)
     return result
+  
+# Function romanTONum takes a string parameter and converts it to integer form
+# PyCharm IDE was used to write the code
+
+def romanToNum(rmn):
+    roman = rmn
+
+    sum = 0;
+
+    for i in range(0,len(roman)):
+        if (roman[i] == "I"):
+            sum =sum+1
+        elif (roman[i] == "V"):
+            sum =sum+5
+        elif (roman[i] == "X"):
+            sum = sum+10
+        elif (roman[i] == "L"):
+            sum = sum+50
+        elif (roman[i] == "C"):
+            sum = sum+100
+        elif (roman[i] == "D"):
+            sum = sum+500
+        elif (roman[i] == "M"):
+            sum = sum+1000
+
+
+    print(sum)
+
+romanToNum("LL")
