@@ -1,0 +1,22 @@
+#Written By SakethV
+#This function converts any integer upto 4000 into a roman numeral by array traversion. The IDE used for this is PyCharm with the programing language being Python 3. 
+
+m = ["", "M", "MM", "MMM"]  # list all the possible values for M
+    c = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]  # list all the possible values for C
+    x = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]  # list all the possible values for x
+
+    i = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]  # list all the possible for i
+
+    # the arrays above list the values of 1000,100,10,1 in incremental values.
+    # this allows us to use remainder functions to place together the string values of the roman numerals when traversing the array
+
+    # now we can start assigning roman numerals by finding the remainder given by each major division.
+    # for example: 241 is made up of 200, 40 and 1. Thus when computing the remainder and assigning values, this will give 0 thousands, 2 100s, 4 10s, and a 1. Based on our arrays above, this means the c[2] and x[4] and i[1]
+    thousands = m[num // 1000]
+    hundreds = c[(num % 1000) // 100]
+    tens = x[(num % 100) // 10]
+    ones = i[num % 10]
+
+    result = (thousands + hundreds +
+              tens + ones)
+    return result
